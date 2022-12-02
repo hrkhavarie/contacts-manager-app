@@ -1,0 +1,32 @@
+body {
+  background:#252a36;
+  margin: 0;
+  font-family:'Vazir' , Tahoma !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input[type="text"] ,
+input[type="email"] ,
+input[type="number"]{
+  color: #f8f8f4;
+}
+
+
+input[type="text"] ,
+input[type="email"] ,
+input[type="number"]{
+  color: #f8f8f4 !important;
+  background: #44475a !important;
+  border-color:#bd93f9 !important;
+}
+
+.form-control{
+  background: #44475a !important;
+  color:#f8f8f4 !important;
+  border: #bd93f9 !important;
+}
+
+.input-group-text{
+  border:none;
+}
