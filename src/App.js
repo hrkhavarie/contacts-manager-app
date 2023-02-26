@@ -52,13 +52,11 @@ function App() {
         event.preventDefault();
         try{
             setLoading((pervLoading) => !pervLoading)
-            const {status , data} = await createContact(contact)
+             await  ContactSchema.validate(contact , {abortEarly: false});
 
-            /*
-              Note
-              1-Render -> forsceRecnder , setForcerender
-              2- setContact(data)
-             */
+            const {status , data} = await createContact(contact )
+
+
 
             if (status === 201) {
                 const allContacts = [...contacts , data];
@@ -69,8 +67,9 @@ function App() {
                 setLoading((pervLoading) => !pervLoading)
                 navigate('/contacts')
             }
-        }catch (eorr){
-            console.log(eorr.message())
+        }catch (error){
+            console.log(error.message);
+            setErrors(event.inner)
         }
     }
 
@@ -164,6 +163,7 @@ function App() {
                setLoading,
                contact ,
                setContacts,
+            //  error,
               contacts ,
               setFilteredContacts ,
               filteredContacts,
